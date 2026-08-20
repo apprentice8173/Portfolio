@@ -9,7 +9,6 @@ Gathering more race data, along with data from different sources, would improve 
 
 Formula 1’s unpredictable nature, with numerous variables affecting pit stops, a model with an accuracy score of at least 85% would be more reliable for strategic decision making while also being a realistic goal. 
 
-![Histogram](/images/histogram-example.png)
 ### Data Engineering & Data Infrastructure and Tools
 Two open Formula 1 datasets were attained from Kaggle, an online community for data scientists (“What is Kaggle?,” 2025). The first document, f1_strategy_dataset, was a single CSV file containing tire, lap, and race information. This file did not include any laps completed under safety car, pitstop information or driver details. A second dataset, Race Data, was obtained to provide additional variables necessary to create a versatile analysis. This dataset contained multiple CSV files comprising of driver demographics, pit stop records, and complete lap time information.
 
@@ -38,3 +37,9 @@ Google Colab is a cloud service and would not be suitable for personal or sensit
 A correlation chart, figure, was created from the data. Columns with a high correlation score indicates a strong relationship with fast_stop making it useful for prediction. Fast_stop has the highest correlation with circuit_id. This positive correlation suggests that the leading impacting factor for pit speed is the circuit. Race_progressed, nationality_id, and tyre_life all have a correlation under 0.01 suggesting there is a weak relationship and may not be useful in the prediction. 
 
 ![Histogram](/images/confusion_martix.png)
+
+To avoid the model being disproportionately affected, the data was scaled to all have a standard deviation of one. Originally the model gave an accuracy score of 66% and an f1-score of 59% whereas the scaled data had an accuracy score of 67% and an f1-score of 61%. From these metrics the scaled data is the better model and will be used in this prediction. 
+
+An accuracy score of 67% was achieved, meaning it is better than a random guess as it is over 50%. However, it’s still not as accurate and hoped for. A precision score of 63% and a recall score of 59% was achieved. For this prediction, precision is the more critical metric because a pit stop predicted fast incorrectly would have a greater negative impact on the race, causing time loss that would need recovering elsewhere.  
+
+A confusion matrix was created to show the actual versus predicted result, shown in figure. The true negative and true positive results are the highest, however, the false positive and false negative outcomes are relatively high at 15% and 18% respectively. In this context, a false negative is the preferable incorrect outcome as the pit stop was faster than predicted causing a better time advantage.
