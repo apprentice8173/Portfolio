@@ -8,6 +8,6 @@ Before starting the analysis I created a correlation chart to see what columns m
 
 ![Correlation Chart](/images/confusion_martix.png)
 
-The confusion matrix is an easy way to see the results of the analysis. Here you can see that the model works best for predicting true negative (slow) outcomes.
+The confusion matrix is an easy way to see the results of the analysis. Here you can see that the model works best for predicting true negative (slow) outcomes. The false positive and false negative outcomes are higher than I wanted so more improvements, like adding more variables, should be made before being used. 
 
 ![Confusion Matrix](/images/confusion_martix1.png)
