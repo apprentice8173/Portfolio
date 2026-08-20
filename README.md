@@ -43,3 +43,9 @@ To avoid the model being disproportionately affected, the data was scaled to all
 An accuracy score of 67% was achieved, meaning it is better than a random guess as it is over 50%. However, it’s still not as accurate and hoped for. A precision score of 63% and a recall score of 59% was achieved. For this prediction, precision is the more critical metric because a pit stop predicted fast incorrectly would have a greater negative impact on the race, causing time loss that would need recovering elsewhere.  
 
 A confusion matrix was created to show the actual versus predicted result, shown in figure. The true negative and true positive results are the highest, however, the false positive and false negative outcomes are relatively high at 15% and 18% respectively. In this context, a false negative is the preferable incorrect outcome as the pit stop was faster than predicted causing a better time advantage.
+
+![Histogram](/confusion_martix1.png)
+
+The ROC curve, figure, shows the true positive rate against the false positive rate for every possible decision (Bobbitt, 2021). The ROC curve area is 0.66, showing that the model is predictive, but ideally this would be closer to the 0.80 mark, making the model more reliable.
+
+![Histogram](/roc_curve.png)
