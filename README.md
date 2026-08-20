@@ -44,8 +44,20 @@ An accuracy score of 67% was achieved, meaning it is better than a random guess 
 
 A confusion matrix was created to show the actual versus predicted result, shown in figure. The true negative and true positive results are the highest, however, the false positive and false negative outcomes are relatively high at 15% and 18% respectively. In this context, a false negative is the preferable incorrect outcome as the pit stop was faster than predicted causing a better time advantage.
 
-![Histogram](/confusion_martix1.png)
+![Histogram](/images/confusion_martix1.png)
 
 The ROC curve, figure, shows the true positive rate against the false positive rate for every possible decision (Bobbitt, 2021). The ROC curve area is 0.66, showing that the model is predictive, but ideally this would be closer to the 0.80 mark, making the model more reliable.
 
-![Histogram](/roc_curve.png)
+![Histogram](/images/roc_curve.png)
+
+Plotting the coefficients helps to identify which features are the most impactful. Ciruitid has the most influence on the model, causing the most effect on pit stop speed. Round and position also have significant influence, even though it is negative. 
+
+![Histogram](/images/plotting_coefficients.png)
+
+### Recommendations
+
+Although this model is predictive it only has an accuracy of 67%, improvements should be made before to increase reliability. Including additional datasets would add more variables such as weather conditions and team specific information, enhancing the predictive capability of the model.
+
+An alternative approach would be to create circuit specific predictions as this information is known prior to the race and could be used in the modelling process. A new classification would be added grouping fast and slow pit stops for each circuit. As circuit_id has the most influence on the model the accuracy and f1-score may decrease as there will be less historic data. However, if this was being used by a strategist then it would be more informative to separate the predictions by track as they could use both predictions to make a more evidence-based plan. 
+
+This prediction can support error identification by finding cases where a pit stop was predicted fast but was slow, allowing for investigation into the cause. 
